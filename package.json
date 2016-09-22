@@ -1,0 +1,28 @@
+{
+  "name": "performance",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robraux/performance.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/robraux/performance/issues"
+  },
+  "homepage": "https://github.com/robraux/performance#readme",
+  "dependencies": {
+    "async": "^2.0.1",
+    "bluebird": "^3.4.6",
+    "hapi": "^15.0.3",
+    "lodash": "^4.15.0",
+    "request": "^2.74.0",
+    "stack-trace": "0.0.9",
+    "webworker-threads": "^0.7.8"
+  }
+}
