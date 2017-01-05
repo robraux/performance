@@ -9,12 +9,14 @@ const async = require('async');
 function doGoodWork(callback) {
   let smallArray = _.range(200);
 
-  async.each(smallArray, (i, cb) => {
+  async.eachLimit(smallArray, 10, (i, cb) => {
     let j = 5 * i;
     let g = [1,2,3,4,5].splice(4);
     let a = '{"a":true,"b":true,"c":true,"d":true,"one":"foot","infrontof":"theother"}';
     let e = JSON.parse(a);
-    return cb();
+    setImmediate( () => {
+      return cb();
+    })
   }, () => {
     callback(null, "completed");
   });

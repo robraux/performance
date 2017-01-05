@@ -6,10 +6,12 @@ const async = require('async');
 
 let hugeArray = _.range(1000);
 
-async.each(hugeArray, (i, cb1) => {
-  async.each(hugeArray, (j, cb2) => {
+async.eachLimit(hugeArray, 10, (i, cb1) => {
+  async.eachLimit(hugeArray, 10, (j, cb2) => {
     console.log(`item:${i}-${j}`);
-    return cb2();
+    setImmediate(() => {
+      return cb2();
+    })
   }, () => {
     return cb1();
   });

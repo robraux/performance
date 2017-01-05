@@ -10,7 +10,9 @@ async.eachSeries(hugeArray, function iteratee(item, callback) {
   console.log(require('stack-trace').get().length);
 
   if (item % 2 === 0) {
-    callback(null, item);
+    setImmediate(() => {
+      callback(null, item);
+    })
   } else {
     nextLoop(item, callback);
   }
